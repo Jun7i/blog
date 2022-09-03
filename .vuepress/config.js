@@ -11,7 +11,7 @@ module.exports = {
     nav: [
       { text: 'Home', link: '/', icon: 'reco-home' },
       { text: 'TimeLine', link: '/timeline/', icon: 'reco-date' },
-      { text: 'About Me', link: '/tags/'},
+      { text: 'About Me', link: '/docs/theme-reco/'},
       { text: 'Docs', 
         icon: 'reco-message',
         items: [
