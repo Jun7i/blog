@@ -91,7 +91,7 @@ module.exports = {
 
     valineConfig: {
     appId: 'gRautPrkF95XsCpJOnH7OMXx-gzGzoHsz',// your appId
-    appKey: 'aXGIr44aujhS62tLyn0rRnKe', // your appKey
+    appKey: 'aXGIr44aujhS62tLyn0rRnKe' // your appKey
      }
   },
   markdown: {
