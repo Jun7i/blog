@@ -21,6 +21,8 @@ module.exports = {
       { text: 'Contact', 
         icon: 'reco-message',
         items: [
+          { text: 'Email (school)', link: 'zejunl@arizona.edu'},
+          { text: 'Email (personal)', link: 'zejunl02@gmail.com'},
           { text: 'GitHub', link: 'https://github.com/Jun7i'},
           { text: 'LinkedIn', link: 'https://www.linkedin.com/in/zejun-li-70ab731b4/' }
         ]
@@ -48,13 +50,13 @@ module.exports = {
     },
     friendLink: [
       {
-        title: '午后南杂',
+        title: 'test',
         desc: 'Enjoy when you can, and endure when you must.',
-        email: '1156743527@qq.com',
+        email: '151495238@qq.com',
         link: 'https://www.recoluan.com'
       },
       {
-        title: 'vuepress-theme-reco',
+        title: 'test',
         desc: 'A simple and beautiful vuepress Blog & Doc theme.',
         avatar: "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
         link: 'https://vuepress-theme-reco.recoluan.com'
