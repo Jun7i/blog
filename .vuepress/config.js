@@ -21,8 +21,6 @@ module.exports = {
       { text: 'Contact', 
         icon: 'reco-message',
         items: [
-          { text: 'Email (school)', link: 'zejunl@arizona.edu'},
-          { text: 'Email (personal)', link: 'zejunl02@gmail.com'},
           { text: 'GitHub', link: 'https://github.com/Jun7i'},
           { text: 'LinkedIn', link: 'https://www.linkedin.com/in/zejun-li-70ab731b4/' }
         ]
