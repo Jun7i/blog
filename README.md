@@ -1,7 +1,7 @@
 ---
 home: true
-heroText: vuepress-theme-reco
-tagline: A simple and beautiful vuepress blog theme.
+heroText: Zejun Li
+tagline: Programmer
 # heroImage: /hero.png
 # heroImageStyle: {
 #   maxWidth: '600px',
