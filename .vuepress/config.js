@@ -20,7 +20,8 @@ module.exports = {
       { text: 'Contact', 
         icon: 'reco-message',
         items: [
-          { text: 'GitHub', link: 'https://github.com/recoluan', icon: 'reco-github' }
+          { text: 'GitHub', link: 'https://github.com/Jun7i', icon: 'reco-github' }
+          { text: 'LinkedIn', link: 'https://www.linkedin.com/in/zejun-li-70ab731b4/', icon: 'reco-github' }
         ]
       }
     ],
