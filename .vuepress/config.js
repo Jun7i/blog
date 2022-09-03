@@ -73,6 +73,9 @@ module.exports = {
     authorAvatar: '/avatar.png',
     // 备案号
     record: 'xxxx',
+    recordLink: 'http://www.baidu.com',
+    cyberSecurityRecord: '2222',
+    cyberSecurityLink: 'http://www.baidu.com',
     // 项目开始时间
     startYear: '2022'
     /**
