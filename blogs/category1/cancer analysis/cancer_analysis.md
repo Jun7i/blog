@@ -287,7 +287,7 @@ fig1()
 
 
     
-![png](output_10_0.png)
+![](https://raw.githubusercontent.com/Jun7i/blog-reco-theme/main/blogs/category1/cancer%20analysis/output_10_0.png)
     
 
 
@@ -534,7 +534,7 @@ fig2()
 
 
     
-![png](output_18_0.png)
+![](https://raw.githubusercontent.com/Jun7i/blog-reco-theme/main/blogs/category1/cancer%20analysis/output_18_0.png)
     
 
 
@@ -571,6 +571,6 @@ plt.show()
 
 
     
-![png](output_21_0.png)
+![](https://raw.githubusercontent.com/Jun7i/blog-reco-theme/main/blogs/category1/cancer%20analysis/output_21_0.png)
     
 
