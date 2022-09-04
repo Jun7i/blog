@@ -1,4 +1,11 @@
-File: ISTA322 final.ipynb
+---
+title: Covid Data Analysis project
+date: 2022-05-16
+tags:
+ - college ranking
+categories: 
+ - Data Analysis
+---
 
 Author: Zejun Li
 
