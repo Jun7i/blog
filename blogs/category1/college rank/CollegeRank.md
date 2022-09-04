@@ -1,5 +1,5 @@
 ---
-title: Covid Data Analysis project
+title: college ranking project
 date: 2022-05-16
 tags:
  - college ranking
