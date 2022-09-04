@@ -28,20 +28,6 @@ module.exports = {
         text: 'Category' // 默认 “分类”
       }
     },
-    friendLink: [
-      {
-        title: 'test',
-        desc: 'Enjoy when you can, and endure when you must.',
-        email: '151495238@qq.com',
-        link: 'https://www.recoluan.com'
-      },
-      {
-        title: 'test',
-        desc: 'A simple and beautiful vuepress Blog & Doc theme.',
-        avatar: "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
-        link: 'https://vuepress-theme-reco.recoluan.com'
-      },
-    ],
     logo: '/logo.png',
     // 搜索设置
     search: true,
