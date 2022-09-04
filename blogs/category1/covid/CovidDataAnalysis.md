@@ -12,7 +12,8 @@ categories:
 
 ## ISTA131 Final project
 This project contains 12 different functions to make 6 different graphs about the COVID 19 in Idaho <br>
-Source: https://covid.cdc.gov/covid-data-tracker/#trends_dailydeaths
+[Source](https://covid.cdc.gov/covid-data-tracker/#trends_dailydeaths)
+
 <br> Columns: State, Date, New Deaths, 7-Day Moving Avg, Current Hospitalized COVID-19 Patients
 
 #### Import modules
