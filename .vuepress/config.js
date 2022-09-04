@@ -12,12 +12,6 @@ module.exports = {
       { text: 'Home', link: '/', icon: 'reco-home' },
       { text: 'TimeLine', link: '/timeline/', icon: 'reco-date' },
       { text: 'About Me', link: '/docs/aboutme/'},
-      { text: 'Docs', 
-        icon: 'reco-message',
-        items: [
-          { text: 'vuepress-reco', link: '/docs/theme-reco/' }
-        ]
-      },
       { text: 'Contact', 
         icon: 'reco-message',
         items: [
@@ -25,25 +19,13 @@ module.exports = {
           { text: 'LinkedIn', link: 'https://www.linkedin.com/in/zejun-li-70ab731b4/' }
         ]
       }
-    ],
-    sidebar: {
-      '/docs/theme-reco/': [
-        '',
-        'theme',
-        'plugin',
-        'api'
-      ]
-    },  
+    ],  
     type: 'blog',
     // 博客设置
     blogConfig: {
       category: {
         location: 2, // 在导航栏菜单中所占的位置，默认2
         text: 'Category' // 默认 “分类”
-      },
-      tag: {
-        location: 3, // 在导航栏菜单中所占的位置，默认3
-        text: 'Tag' // 默认 “标签”
       }
     },
     friendLink: [
