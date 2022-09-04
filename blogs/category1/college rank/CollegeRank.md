@@ -1,5 +1,5 @@
 ---
-title: college ranking project
+title: College Ranking project
 date: 2022-05-16
 tags:
  - college ranking
@@ -11,7 +11,7 @@ Author: Zejun Li
 
 Goal: The goal of the project is to merge two college datasets to find out the colleges that exist in both datasets in a dataframe. The dataframe will be US colleges in both datasets with more information. It would determine the relationship between the national information and detailed information.
 
-Final plan document: https://docs.google.com/document/d/1B6rueITy7G_qoBPgmWMn5vlgvVJfaP9geXjB9Ni159o/edit?usp=sharing
+[Final plan document](https://docs.google.com/document/d/1B6rueITy7G_qoBPgmWMn5vlgvVJfaP9geXjB9Ni159o/edit?usp=sharing)
 
 ## Import modules
 
