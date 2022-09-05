@@ -18,7 +18,7 @@ Major：Information Science And Technology <br> Minor：Computer Science
 
 
 <h2>Skills</h2>
-Languages：Python, R, Java, JavaScript, PHP, SQL <br>
+Languages：Python, R, Java, JavaScript, PHP, SQL, Markdown <br>
 Stack：HTML/CSS/JS <br>
 Python Libraries: Pandas, Numpy, matplotlib, BeautifulSoup, pyspark, psycopg2 <br>
 OS：Windows, Android <br>
