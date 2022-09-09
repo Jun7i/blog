@@ -1,3 +1,11 @@
+---
+title: Yelp Data Analysis project
+date: 2022-05-16
+tags:
+ - Yelp
+categories: 
+ - Data Analysis
+---
 ```python
 import pandas as pd
 from datetime import datetime
@@ -1303,7 +1311,7 @@ for idx, row in restaurants.iterrows():
     Marker([row['coordinates.latitude'], row['coordinates.longitude']]).add_to(m_tucson)
 m_tucson.save('map.html')
 ```
-
+https://github.com/Jun7i/blog/blob/main/blogs/category1/yelp/map.html
 
 ```python
 sns.heatmap(restaurants.corr(), annot=True,linewidths=.5)
@@ -1318,7 +1326,7 @@ sns.heatmap(restaurants.corr(), annot=True,linewidths=.5)
 
 
     
-![png](output_5_1.png)
+![png](https://github.com/Jun7i/blog/blob/main/blogs/category1/yelp/output_5_1.png)
     
 
 
@@ -1383,6 +1391,6 @@ plt.ylabel("number of categories")
 
 
     
-![png](output_7_1.png)
+![](https://github.com/Jun7i/blog/blob/main/blogs/category1/yelp/output_7_1.png)
     
 
