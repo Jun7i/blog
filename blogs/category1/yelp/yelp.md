@@ -1311,7 +1311,7 @@ for idx, row in restaurants.iterrows():
     Marker([row['coordinates.latitude'], row['coordinates.longitude']]).add_to(m_tucson)
 m_tucson.save('map.html')
 ```
-https://github.com/Jun7i/blog/blob/main/blogs/category1/yelp/map.html
+[](https://github.com/Jun7i/blog/blob/main/blogs/category1/yelp/map.html)
 
 ```python
 sns.heatmap(restaurants.corr(), annot=True,linewidths=.5)
@@ -1326,7 +1326,7 @@ sns.heatmap(restaurants.corr(), annot=True,linewidths=.5)
 
 
     
-![png](https://github.com/Jun7i/blog/blob/main/blogs/category1/yelp/output_5_1.png)
+![](https://github.com/Jun7i/blog/blob/main/blogs/category1/yelp/output_5_1.png)
     
 
 
