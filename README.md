@@ -1,7 +1,7 @@
 ---
 home: true
 heroText: Zejun Li
-tagline: Programmer
+tagline: portfolio
 # heroImage: /hero.png
 # heroImageStyle: {
 #   maxWidth: '600px',
