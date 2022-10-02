@@ -16,6 +16,7 @@ module.exports = {
         icon: 'reco-message',
         items: [
           { text: 'GitHub', link: 'https://github.com/Jun7i'},
+          { text: 'CodePen', link: 'https://codepen.io/Jun_7i'},
           { text: 'LinkedIn', link: 'https://www.linkedin.com/in/zejun-li-70ab731b4/' }
         ]
       }
