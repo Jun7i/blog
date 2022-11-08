@@ -113,3 +113,52 @@ class DatabaseAdaptor
     
 }
 ```
+
+## controller.php
+```
+<?php
+// Author: Zejun Li
+include 'DatabaseAdaptor.php';
+$theDBA = new DatabaseAdaptor();
+if ($_GET['tableName'] === "foodtbl")
+    echo json_encode($theDBA->getFood($_GET['substring']));
+    
+    ?>
+```
+
+## capstone.css
+```
+table, td {
+	margin: auto;
+	height: 100px;
+	width: 500px;
+	border: 1px solid black;
+	padding: 5px;
+	border-collapse: collapse;
+	text-align: left;
+}
+
+
+
+h1 {
+	text-align: center;
+	color: green;
+}
+
+h3 {
+	text-align: center;
+	color: black;
+}
+
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto
+}
+
+.searchBar {
+	width: 500px;
+	margin: auto;
+	text-align: center;
+}
+```
