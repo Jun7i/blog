@@ -12,73 +12,79 @@ categories:
 <!DOCTYPE html>
 <!-- Zejun Li -->
 <html>
+
 <head>
-<link rel="stylesheet" href="capstone.css">
-<title>view</title>
-<style>
+	<link rel="stylesheet" href="capstone.css">
+	<title>view</title>
+	<style>
 
-</style>
+	</style>
 </head>
+
 <body>
-	<h1>Smarter Choice!</h1>
-	<h3>Healthy Food Alternatives</h3>
-	<hr>
-	<br>
-	<!--  
-<input type="text" id='name'> Food name
-<br>
-<br>
-<button type="button" id='search' onClick="showFood()">Search</button>
-<div id='divToChange'></div>
--->
-	<!--  -->
-	<div class='searchBar'>
-		<form>
-			<label for="foodName">Food name:</label> <input type="text" id="name">
-			<br> <br>
-			<button type="button" id="search" onClick="showFood()">Search</button>
-		</form>
-		<div id='divToChange'></div>
-
+	<div class="header">
+		<div class="headerText">
+			Diet <span>App</span>
+		</div>
+		<span class="headerHome" onclick="showAllFood()">home</span>
 	</div>
-	<script>
-		function showFood() {
-			var food = document.getElementById('name').value;
+	<div class='searchBar'>
+		<br>
+		<label for="foodName">Food name:</label> <input type="text" id="name">
+		<br>
+		<button type="button" id="search" onClick="showAllFood()">Search</button>
+	</div>
+	<div id='divToChange'></div>
 
+	<script>
+		function showAllFood() {
+			var food = document.getElementById('name').value;
 			var ajax = new XMLHttpRequest();
 			ajax.open('GET', 'controller.php?tableName=foodtbl&substring='
-					+ (food), true);
+				+ (food), true);
 			ajax.send();
-			ajax.onreadystatechange = function() {
+			ajax.onreadystatechange = function () {
 				if (ajax.readyState == 4 && ajax.status == 200) {
 					array = JSON.parse(ajax.responseText);
 					if (array.length == 0) {
 						str = "<br>No matches for: " + "'" + name.value + "'";
 						document.getElementById('divToChange').innerHTML = str;
 					} else {
-						var str = "<br><br><h3>Results:</h3><table>";
-						for (var i = 1; i < 10; i++) {
+						var str = "";
+						for (var i = 0; i < 12; i++) {
 							var url = array[i].image_url;
-							str += "<tr>";
-							str += "<td>"
-									+ "<a href='foodView.html'>Product Name: "
-									+ array[i].product_name
-									+ "</a>";
-							if (url != 'undefined'){			
-									str += "<br><img src = "+url+" width = '100px' height='100px'>";
-									} else {
-									str += "<br><img src = "+"https://toppng.com/uploads/preview/clipart-free-seaweed-clipart-draw-food-placeholder-11562968708qhzooxrjly.png"+" width = '100px' height='100px'>";
-									}
-									 str += "</td>";
+
+							if (url != 'undefined') {
+								str += "<div class=\"onebook\">" + "<h5>" + array[i].product_name + "</h5>" + "<img src = " + url
+									+ " onclick = " + '' + "></div>";
+							} else {
+								str += "<div class=\"onebook\">" + "<h5>" + array[i].product_name + "</h5>" + "<img src = "
+									+ "https://toppng.com/uploads/preview/clipart-free-seaweed-clipart-draw-food-placeholder-11562968708qhzooxrjly.png"
+									+ " onclick = " + '' + "></div>";
+							}
 						}
-						str += "</tr></table>";
 						document.getElementById('divToChange').innerHTML = str;
 					}
 				}
 			}
 		}
+		function showFood(food) {
+			var ajax = new XMLHttpRequest();
+			ajax.open("GET", 'controller.php?tableName=foodtbl&substring='
+				+ ('soda water'), true);
+			ajax.send();
+
+			ajax.onreadystatechange = function () {
+				if (ajax.readyState == 4 && ajax.status == 200) {
+					var array = JSON.parse(ajax.responseText);
+					var str = 'test';
+					document.getElementById("divToChange").innerHTML = str;
+				}
+			}
+		}
 	</script>
 </body>
+
 </html>
 ```
 ## DatabaseAdaptor.php
@@ -128,37 +134,74 @@ if ($_GET['tableName'] === "foodtbl")
 
 ## capstone.css
 ```
-table, td {
-	margin: auto;
-	height: 100px;
-	width: 500px;
-	border: 1px solid black;
-	padding: 5px;
-	border-collapse: collapse;
-	text-align: left;
-}
-
-
-
-h1 {
-	text-align: center;
-	color: green;
-}
-
-h3 {
-	text-align: center;
-	color: black;
-}
-
-img {
-	display: block;
-	margin-left: auto;
-	margin-right: auto
+body {
+	background-color: #fefcf4;
+	margin: 0px;
 }
 
 .searchBar {
 	width: 500px;
 	margin: auto;
+	font-family: cursive;
 	text-align: center;
+	font-size: 20pt;
+}
+
+.onebook {
+	background-color: #f4f1eb;
+	border-radius: 5px;
+	box-shadow: 0 0 15px gray;
+	float: left;
+	margin: 40px;
+	padding: 10px;
+	width: 150px;
+	height: 230px;
+}
+
+
+img {
+	height: 150px;
+	width: 150px;
+	float: left;
+	padding-top: -50px;
+}
+
+.thedetails {
+	padding: 10px;
+	margin: 10px;
+	float: left;
+	width: 900px;
+	height: 300px;
+}
+
+.headerHome {
+	border: #974455 solid 3px;
+	bottom: 5px;
+	color: #974455;
+	font-size: 18pt;
+	right: 10%;
+	padding: 3px;
+	position: absolute;
+	margin: 20px;
+}
+
+.header {
+	background-image: url("https://cdn.wallpapersafari.com/14/72/MBtfu9.jpg");
+	box-shadow: 0 5px 5px rgb(58, 37, 37);
+	height: 104px;
+	position: relative;
+}
+
+.headerText {
+	margin: 20px;
+}
+
+.header>div {
+	bottom: 0px;
+	color: #6f0218;
+	font-family: Tahoma, sans-serif;
+	font-size: 36pt;
+	position: absolute;
+	left: 10%;
 }
 ```
