@@ -51,16 +51,17 @@ categories:
 						document.getElementById('divToChange').innerHTML = str;
 					} else {
 						var str = "";
+						
 						for (var i = 0; i < 12; i++) {
 							var url = array[i].image_url;
 
 							if (url != 'undefined') {
 								str += "<div class=\"onebook\">" + "<h5>" + array[i].product_name + "</h5>" + "<img src = " + url
-									+ " onclick = " + '' + "></div>";
+									+ " onclick = " + showFood(i) + "></div>";
 							} else {
 								str += "<div class=\"onebook\">" + "<h5>" + array[i].product_name + "</h5>" + "<img src = "
 									+ "https://toppng.com/uploads/preview/clipart-free-seaweed-clipart-draw-food-placeholder-11562968708qhzooxrjly.png"
-									+ " onclick = " + '' + "></div>";
+									+ " onclick = " + showFood(i) + "></div>";
 							}
 						}
 						document.getElementById('divToChange').innerHTML = str;
@@ -68,17 +69,18 @@ categories:
 				}
 			}
 		}
-		function showFood(food) {
+		function showFood(index) {
 			var ajax = new XMLHttpRequest();
 			ajax.open("GET", 'controller.php?tableName=foodtbl&substring='
-				+ ('soda water'), true);
+				+ (index), true);
 			ajax.send();
 
 			ajax.onreadystatechange = function () {
 				if (ajax.readyState == 4 && ajax.status == 200) {
 					var array = JSON.parse(ajax.responseText);
-					var str = 'test';
-					document.getElementById("divToChange").innerHTML = str;
+					var str = 'test: ';
+					str += array.energy_100g;
+					document.getElementById("divToChange").innerHTML = str+ array[index].calories;
 				}
 			}
 		}
@@ -94,7 +96,7 @@ categories:
 // Author: Zejun Li
 class DatabaseAdaptor
 {
-    
+
     private $DB;
     public function __construct()
     {
@@ -109,14 +111,20 @@ class DatabaseAdaptor
             exit();
         }
     }
-    
+
     public function getFood($input)
     {
-        $stmt = $this->DB->prepare("SELECT product_name, image_url, categories_en FROM foodtbl WHERE categories_en LIKE'%".$input."%' ORDER BY Food_item_score DESC;");
+        $stmt = $this->DB->prepare("SELECT * FROM foodtbl WHERE categories_en LIKE'%" . $input . "%' ORDER BY Food_item_score DESC;");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    
+
+    public function getOneFood($input)
+    {
+        $stmt = $this->DB->prepare("SELECT * FROM foodtbl WHERE index LIKE'%" . $input . "%';");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 ```
 
@@ -128,8 +136,10 @@ include 'DatabaseAdaptor.php';
 $theDBA = new DatabaseAdaptor();
 if ($_GET['tableName'] === "foodtbl")
     echo json_encode($theDBA->getFood($_GET['substring']));
-    
-    ?>
+
+if (($_GET['tableName'] === "foodtbl")&& (is_int($_GET['substring'])) === True)
+    echo json_encode($theDBA->getOneFood($_GET['substring']));
+
 ```
 
 ## capstone.css
