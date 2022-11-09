@@ -8,7 +8,8 @@ categories:
 ---
 
 ## view.html
-```
+```html
+
 <!DOCTYPE html>
 <!-- Zejun Li -->
 <html>
@@ -90,7 +91,7 @@ categories:
 </html>
 ```
 ## DatabaseAdaptor.php
-```
+```php
 <?php
 
 // Author: Zejun Li
@@ -143,7 +144,7 @@ if (($_GET['tableName'] === "foodtbl")&& (is_int($_GET['substring'])) === True)
 ```
 
 ## capstone.css
-```
+``` html
 body {
 	background-color: #fefcf4;
 	margin: 0px;
