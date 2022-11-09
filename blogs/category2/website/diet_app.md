@@ -130,7 +130,7 @@ class DatabaseAdaptor
 ```
 
 ## controller.php
-```
+```php
 <?php
 // Author: Zejun Li
 include 'DatabaseAdaptor.php';
@@ -144,7 +144,7 @@ if (($_GET['tableName'] === "foodtbl")&& (is_int($_GET['substring'])) === True)
 ```
 
 ## capstone.css
-``` html
+``` css
 body {
 	background-color: #fefcf4;
 	margin: 0px;
