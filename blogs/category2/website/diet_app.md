@@ -9,7 +9,6 @@ categories:
 
 ## view.html
 ```html
-
 <!DOCTYPE html>
 <!-- Zejun Li -->
 <html>
@@ -75,14 +74,14 @@ categories:
 			ajax.open("GET", 'controller.php?tableName=foodtbl&substring='
 				+ (index), true);
 			ajax.send();
-
+			var str = '';
 			ajax.onreadystatechange = function () {
 				if (ajax.readyState == 4 && ajax.status == 200) {
-					var array = JSON.parse(ajax.responseText);
-					var str = 'test: ';
-					str += array.energy_100g;
-					document.getElementById("divToChange").innerHTML = str+ array[index].calories;
+				 	array = JSON.parse(ajax.responseText);
+					str += 'Calories: ';
+					str+= + array[index].calories
 				}
+				document.getElementById("divToChange").innerHTML = str;
 			}
 		}
 	</script>
