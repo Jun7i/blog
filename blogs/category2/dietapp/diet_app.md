@@ -37,8 +37,9 @@ categories:
 		<br>
 		<button type="button" id="search" onClick="showAllFood()">Search</button>
 	</div>
+
 	<div id='divToChange'></div>
-	<div id="donutchart" ></div>
+	<div id='pie'></div>
 	<script type="text/javascript">
 		function showAllFood() {
 			var food = document.getElementById('name').value;
@@ -56,23 +57,35 @@ categories:
 						var str = "";
 						for (var i = 0; i < 12; i++) {
 							var url = array[i].image_url;
+							str += "<div class='onebook'>";
 							if (url != 'undefined') {
-								str += "<div class='onebook'>" + "<h5>" + array[i].product_name + "</h5>" + "<img src = '" + array[i].image_url
-									+ "'id='" + array[i].product_name + "'onclick = 'showFood(this, " + i + ")'></div> ";
+								str += "<h5>" + array[i].product_name + "</h5>" + "<img src = '" + array[i].image_url
+									+ "'id='" + array[i].product_name + "'onclick = 'showFood(this, " + i + ")'>";
 							} else {
-								str += "<div class='onebook'>" + "<h5>" + array[i].product_name + "</h5>" + "<img src = '"
+								str += "<h5>" + array[i].product_name + "</h5>" + "<img src = '"
 									+ "https://toppng.com/uploads/preview/clipart-free-seaweed-clipart-draw-food-placeholder-11562968708qhzooxrjly.png"
-									+ "'onclick = 'showFood(this, " + i + ")'></div> ";
+									+ "'onclick = 'showFood(this, " + i + ")'>";
 							}
+							str += "</div>";
 						}
 						document.getElementById('divToChange').innerHTML = str;
 					}
 				}
 			}
 		}
+
 		var product;
+		var energy;
+		var fat;
+		var saturated_fat;
+		var sugar;
+		var salt;
+		var sodium;
+		var fiber;
 		var calories;
 		var proteins;
+		var score;
+		var str = "";
 		function showFood(food, index) {
 			var ajax = new XMLHttpRequest();
 			var name = food.id;
@@ -84,40 +97,48 @@ categories:
 				}
 			}
 
-
-
-			var str = "";
 			product = array[index].product_name;
+			energy = array[index].energy_100g;
+			fat = array[index].fat_100g;
+			saturated_fat = array[index].saturated_fat_100g;
+			sugar = array[index].sugars_100g;
+			salt = array[index].salt_100g;
+			sodium = array[index].sodium_100g;
+			fiber = array[index].fiber_100g;
 			calories = array[index].calories;
 			proteins = array[index].proteins_100g;
 			str += '<br>';
 			str += 'Product_name: ' + product;
-			str += '<br>';
-			str += 'Calories: ' + calories;
-			str += '<br>';
-			str += 'Protein: ' + proteins;
 			document.getElementById('divToChange').innerHTML = str;
 			google.charts.load("current", { packages: ["corechart"] });
 			google.charts.setOnLoadCallback(drawChart);
+
 		}
 
-		
+
 		function drawChart() {
 			var data = google.visualization.arrayToDataTable([
 				['Food info', 'number'],
-				['Energy', calories],
+				['Energy', energy],
+				['Fat', fat],
+				['Saturated fat', saturated_fat],
+				['Sugar', sugar],
+				['Salt', salt],
+				['Sodium', sodium],
+				['Fiber', fiber],
+				['Calories', calories],
 				['Proteins', proteins]
 			]);
 
 			var options = {
 				backgroundColor: '#fefcf4',
-				title: 'Food info',
-				width:400,
-                height:300,
-				pieHole: 0.4,
+				title: product,
+				width: 600,
+				height: 600,
 			};
+			var chart = new google.visualization.PieChart(document.getElementById('pie'));
 
-			var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+
 			chart.draw(data, options);
 		}
 
