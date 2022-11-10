@@ -4,7 +4,7 @@ date: 2022-05-16
 tags:
  - college ranking
 categories: 
- - Website
+ - Data Analysis
 ---
 
 Author: Zejun Li
