@@ -4,7 +4,7 @@ date: 2022-09-01
 tags:
  - diet app
 categories: 
- - Data Analysis
+ - Website
 ---
 
 ## view.html
@@ -16,12 +16,15 @@ categories:
 <head>
 	<link rel="stylesheet" href="capstone.css">
 	<title>view</title>
-	<style>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
 
-	</style>
+
+	</script>
 </head>
 
 <body>
+
 	<div class="header">
 		<div class="headerText">
 			Diet <span>App</span>
@@ -35,13 +38,13 @@ categories:
 		<button type="button" id="search" onClick="showAllFood()">Search</button>
 	</div>
 	<div id='divToChange'></div>
-
-	<script>
+	<div id="donutchart" ></div>
+	<script type="text/javascript">
 		function showAllFood() {
 			var food = document.getElementById('name').value;
 			var ajax = new XMLHttpRequest();
 			ajax.open('GET', 'controller.php?tableName=foodtbl&substring='
-				+ (food), true);
+				+ food, true);
 			ajax.send();
 			ajax.onreadystatechange = function () {
 				if (ajax.readyState == 4 && ajax.status == 200) {
@@ -51,17 +54,15 @@ categories:
 						document.getElementById('divToChange').innerHTML = str;
 					} else {
 						var str = "";
-						
 						for (var i = 0; i < 12; i++) {
 							var url = array[i].image_url;
-
 							if (url != 'undefined') {
-								str += "<div class=\"onebook\">" + "<h5>" + array[i].product_name + "</h5>" + "<img src = " + url
-									+ " onclick = " + showFood(i) + "></div>";
+								str += "<div class='onebook'>" + "<h5>" + array[i].product_name + "</h5>" + "<img src = '" + array[i].image_url
+									+ "'id='" + array[i].product_name + "'onclick = 'showFood(this, " + i + ")'></div> ";
 							} else {
-								str += "<div class=\"onebook\">" + "<h5>" + array[i].product_name + "</h5>" + "<img src = "
+								str += "<div class='onebook'>" + "<h5>" + array[i].product_name + "</h5>" + "<img src = '"
 									+ "https://toppng.com/uploads/preview/clipart-free-seaweed-clipart-draw-food-placeholder-11562968708qhzooxrjly.png"
-									+ " onclick = " + showFood(i) + "></div>";
+									+ "'onclick = 'showFood(this, " + i + ")'></div> ";
 							}
 						}
 						document.getElementById('divToChange').innerHTML = str;
@@ -69,22 +70,60 @@ categories:
 				}
 			}
 		}
-		function showFood(index) {
+		var product;
+		var calories;
+		var proteins;
+		function showFood(food, index) {
 			var ajax = new XMLHttpRequest();
-			ajax.open("GET", 'controller.php?tableName=foodtbl&substring='
-				+ (index), true);
+			var name = food.id;
+			ajax.open("GET", 'controller.php?tableName=foodtb&substring =' + index + '&id=' + name, true);
 			ajax.send();
-			var str = '';
 			ajax.onreadystatechange = function () {
 				if (ajax.readyState == 4 && ajax.status == 200) {
-				 	array = JSON.parse(ajax.responseText);
-					str += 'Calories: ';
-					str+= + array[index].calories
+					array = JSON.parse(ajax.responseText);
 				}
-				document.getElementById("divToChange").innerHTML = str;
 			}
+
+
+
+			var str = "";
+			product = array[index].product_name;
+			calories = array[index].calories;
+			proteins = array[index].proteins_100g;
+			str += '<br>';
+			str += 'Product_name: ' + product;
+			str += '<br>';
+			str += 'Calories: ' + calories;
+			str += '<br>';
+			str += 'Protein: ' + proteins;
+			document.getElementById('divToChange').innerHTML = str;
+			google.charts.load("current", { packages: ["corechart"] });
+			google.charts.setOnLoadCallback(drawChart);
 		}
+
+		
+		function drawChart() {
+			var data = google.visualization.arrayToDataTable([
+				['Food info', 'number'],
+				['Energy', calories],
+				['Proteins', proteins]
+			]);
+
+			var options = {
+				backgroundColor: '#fefcf4',
+				title: 'Food info',
+				width:400,
+                height:300,
+				pieHole: 0.4,
+			};
+
+			var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+			chart.draw(data, options);
+		}
+
 	</script>
+
+
 </body>
 
 </html>
@@ -96,7 +135,7 @@ categories:
 // Author: Zejun Li
 class DatabaseAdaptor
 {
-
+    
     private $DB;
     public function __construct()
     {
@@ -111,20 +150,21 @@ class DatabaseAdaptor
             exit();
         }
     }
-
+    
     public function getFood($input)
     {
-        $stmt = $this->DB->prepare("SELECT * FROM foodtbl WHERE categories_en LIKE'%" . $input . "%' ORDER BY Food_item_score DESC;");
+        $stmt = $this->DB->prepare("SELECT product_name, image_url, calories, proteins_100g, categories_en FROM foodtbl WHERE categories_en LIKE'%".$input."%' ORDER BY Food_item_score DESC;");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
+    
     public function getOneFood($input)
     {
-        $stmt = $this->DB->prepare("SELECT * FROM foodtbl WHERE index LIKE'%" . $input . "%';");
+        $stmt = $this->DB->prepare("SELECT product_name, image_url, calories, protein_100g FROM foodtbl WHERE product_name ='" . $input . "%';");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    
 }
 ```
 
@@ -134,12 +174,14 @@ class DatabaseAdaptor
 // Author: Zejun Li
 include 'DatabaseAdaptor.php';
 $theDBA = new DatabaseAdaptor();
-if ($_GET['tableName'] === "foodtbl")
+
+if ( ( $_GET['tableName'] === "foodtbl" && is_string($_GET['substring'])) ) {
     echo json_encode($theDBA->getFood($_GET['substring']));
-
-if (($_GET['tableName'] === "foodtbl")&& (is_int($_GET['substring'])) === True)
-    echo json_encode($theDBA->getOneFood($_GET['substring']));
-
+}
+if ($_GET['tableName'] === "foodtb") {
+    echo json_encode($theDBA->getOneFood($_GET['id']));
+}
+?>
 ```
 
 ## capstone.css
@@ -201,6 +243,7 @@ img {
 	height: 104px;
 	position: relative;
 }
+
 
 .headerText {
 	margin: 20px;
