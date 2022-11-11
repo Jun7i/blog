@@ -188,14 +188,14 @@ class DatabaseAdaptor
     
     public function getFood($input)
     {
-        $stmt = $this->DB->prepare("SELECT product_name, image_url, calories, proteins_100g, categories_en FROM foodtbl WHERE categories_en LIKE'%".$input."%' ORDER BY Food_item_score DESC;");
+        $stmt = $this->DB->prepare("SELECT * FROM foodtbl WHERE categories_en LIKE'%".$input."%' ORDER BY Food_item_score DESC;");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    
+   
     public function getOneFood($input)
     {
-        $stmt = $this->DB->prepare("SELECT product_name, image_url, calories, protein_100g FROM foodtbl WHERE product_name ='" . $input . "%';");
+        $stmt = $this->DB->prepare("SELECT * FROM foodtbl WHERE product_name ='" . $input . "%';");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
