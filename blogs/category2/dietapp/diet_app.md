@@ -37,9 +37,15 @@ categories:
 		<br>
 		<button type="button" id="search" onClick="showAllFood()">Search</button>
 	</div>
+	<div id='outer'>
+		<div id='cardsID'></div>
+		<div id='detailsID'></div>
+		<div id='pieID'></div>
+		<div id='tableID'></div>
+		
+	</div>
 
-	<div id='divToChange'></div>
-	<div id='pie'></div>
+
 	<script type="text/javascript">
 		function showAllFood() {
 			var food = document.getElementById('name').value;
@@ -52,23 +58,24 @@ categories:
 					array = JSON.parse(ajax.responseText);
 					if (array.length == 0) {
 						str = "<br>No matches for: " + "'" + name.value + "'";
-						document.getElementById('divToChange').innerHTML = str;
+						document.getElementById('cardsID').innerHTML = str;
 					} else {
 						var str = "";
 						for (var i = 0; i < 12; i++) {
 							var url = array[i].image_url;
 							str += "<div class='onebook'>";
 							if (url != 'undefined') {
-								str += "<h5>" + array[i].product_name + "</h5>" + "<img src = '" + array[i].image_url
+								str += "<h5>" + array[i].product_name + "</h5>" + "<img class ='imgout' src = '" + array[i].image_url
 									+ "'id='" + array[i].product_name + "'onclick = 'showFood(this, " + i + ")'>";
 							} else {
-								str += "<h5>" + array[i].product_name + "</h5>" + "<img src = '"
+								str += "<h5>" + array[i].product_name + "</h5>" + "<img class ='imgout' src = '"
 									+ "https://toppng.com/uploads/preview/clipart-free-seaweed-clipart-draw-food-placeholder-11562968708qhzooxrjly.png"
 									+ "'onclick = 'showFood(this, " + i + ")'>";
 							}
 							str += "</div>";
 						}
-						document.getElementById('divToChange').innerHTML = str;
+						document.getElementById('cardsID').innerHTML = str;
+						document.getElementById('pieID').innerHTML = "";
 					}
 				}
 			}
@@ -85,10 +92,11 @@ categories:
 		var calories;
 		var proteins;
 		var score;
-		var str = "";
+		var image; 
 		function showFood(food, index) {
 			var ajax = new XMLHttpRequest();
 			var name = food.id;
+			var str = "";
 			ajax.open("GET", 'controller.php?tableName=foodtb&substring =' + index + '&id=' + name, true);
 			ajax.send();
 			ajax.onreadystatechange = function () {
@@ -107,9 +115,17 @@ categories:
 			fiber = array[index].fiber_100g;
 			calories = array[index].calories;
 			proteins = array[index].proteins_100g;
-			str += '<br>';
-			str += 'Product_name: ' + product;
-			document.getElementById('divToChange').innerHTML = str;
+			score = array[index].Food_item_score;
+			var image = array[index].image_url;
+			
+			str += "<img class = 'imgin' src='"+image+"'>";
+			str += '<span class="dot">';
+			str += "<div class = 'score'> <h1>" + score + '</div></h1>';
+			
+			str += '</span>';
+			
+			document.getElementById('cardsID').innerHTML = str;
+			google.charts.load('current', {'packages':['table']});
 			google.charts.load("current", { packages: ["corechart"] });
 			google.charts.setOnLoadCallback(drawChart);
 
@@ -117,9 +133,8 @@ categories:
 
 
 		function drawChart() {
-			var data = google.visualization.arrayToDataTable([
+			var dataP = google.visualization.arrayToDataTable([
 				['Food info', 'number'],
-				['Energy', energy],
 				['Fat', fat],
 				['Saturated fat', saturated_fat],
 				['Sugar', sugar],
@@ -129,18 +144,17 @@ categories:
 				['Calories', calories],
 				['Proteins', proteins]
 			]);
-
-			var options = {
+			var optionsP = {
 				backgroundColor: '#fefcf4',
 				title: product,
 				width: 600,
 				height: 600,
 			};
-			var chart = new google.visualization.PieChart(document.getElementById('pie'));
-
-
-			chart.draw(data, options);
+			var chart = new google.visualization.PieChart(document.getElementById('pieID'));
+			chart.draw(dataP, optionsP);
 		}
+
+		
 
 	</script>
 
@@ -232,20 +246,34 @@ body {
 }
 
 
-img {
+
+.imgout {
 	height: 150px;
 	width: 150px;
 	float: left;
 	padding-top: -50px;
 }
 
-.thedetails {
-	padding: 10px;
-	margin: 10px;
-	float: left;
-	width: 900px;
-	height: 300px;
+.imgin {
+	height: 400px;
+	width: 300px;
+	float: right;
+	margin-top: 100px;
+	margin-right: 650px;
 }
+
+.score {
+	margin-left: 30px;
+	margin-top: 30px;
+}
+.dot {
+	height: 100px;
+	width: 100px;
+	background-color: rgb(229, 255, 0);
+	border-radius: 50%;
+	display: inline-block;
+	margin-left: 200px;
+  }
 
 .headerHome {
 	border: #974455 solid 3px;
