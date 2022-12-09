@@ -6,13 +6,8 @@ tags:
 categories: 
  - Website
 ---
-## Home page
 ![](https://github.com/Jun7i/blog/blob/main/blogs/category2/dietapp/output1.png)
-![](https://github.com/Jun7i/blog/blob/main/blogs/category1/yelp/output_5_1.png)
-## Output page
 ![](https://github.com/Jun7i/blog/blob/main/blogs/category2/dietapp/output2.png)
-
-## Detail page
 ![](https://github.com/Jun7i/blog/blob/main/blogs/category2/dietapp/output3.png)
 
 ## view.html
