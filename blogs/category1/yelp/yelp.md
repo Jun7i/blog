@@ -1326,7 +1326,7 @@ sns.heatmap(restaurants.corr(), annot=True,linewidths=.5)
 
 
     
-![](https://github.com/Jun7i/blog/blob/main/blogs/category1/yelp/output_5_1.png)
+![](https://raw.githubusercontent.com/Jun7i/blog/main/blogs/category1/yelp/output_5_1.png)
     
 
 
@@ -1391,6 +1391,6 @@ plt.ylabel("number of categories")
 
 
     
-![](https://github.com/Jun7i/blog/blob/main/blogs/category1/yelp/output_7_1.png)
+![](https://raw.githubusercontent.com/Jun7i/blog/main/blogs/category1/yelp/output_7_1.png)
     
 
