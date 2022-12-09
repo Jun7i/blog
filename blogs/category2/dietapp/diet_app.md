@@ -6,8 +6,11 @@ tags:
 categories: 
  - Website
 ---
+## Home page
 ![Home page](https://raw.githubusercontent.com/Jun7i/blog/main/blogs/category2/dietapp/output1.png)
+## Output page
 ![Output page](https://raw.githubusercontent.com/Jun7i/blog/main/blogs/category2/dietapp/output2.png)
+## Detail page
 ![Detail page](https://raw.githubusercontent.com/Jun7i/blog/main/blogs/category2/dietapp/output3.png)
 ## view.html
 ```html
