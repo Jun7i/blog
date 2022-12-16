@@ -4,8 +4,8 @@ date: 2019-11-20
 ---
 
 <h2>Information</h2>
-Phone：208-316-6877 <br>
-Email：zejunl@email.arizona.edu(school) <br> zejunl02@gmail.com(personal)
+ <br>
+Email：zejunl02@gmail.com <br> 
 
 
 <h2>Education</h2>
