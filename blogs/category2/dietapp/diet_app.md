@@ -11,7 +11,9 @@ categories:
 
 
 ## Proposal
-![](https://raw.githubusercontent.com/Jun7i/blog/707b4c112000400479d6c1bc2f8f1e5236abea50/blogs/category2/dietapp/Proposal.pdf)
+<object data="https://user-images.githubusercontent.com/44311497/208331449-a12dc077-b008-4f32-ba95-0227471a2b5e.png" type="application/pdf" width="100%">
+	</object>
+
 
 ## Poster
 ![](https://raw.githubusercontent.com/Jun7i/blog-reco-theme/main/blogs/category2/dietapp/Capstone_Poster.png)
