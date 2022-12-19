@@ -19,7 +19,7 @@ Major：Information Science And Technology <br> Minor：Computer Science
 
 <h2>Skills</h2>
 Languages：Python, R, Java, PHP, SQL, Markdown, HTML/CSS/JS <br>
-Front end: Vue2 <br>
-Back end: ElementUI, Mybatis, SpringBoot <br>
+Front end: ElementUI, Vue2 <br>
+Back end: Mybatis, SpringBoot <br>
 OS：Windows, Android <br>
 Other：AWS EC2, VirtualBox, Cinema 4D, FL Studio, Photoshop
