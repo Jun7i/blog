@@ -11,8 +11,7 @@ categories:
 
 
 ## Proposal
-<object data="https://user-images.githubusercontent.com/44311497/208331449-a12dc077-b008-4f32-ba95-0227471a2b5e.png" type="application/pdf" width="100%">
-	</object>
+![image](https://user-images.githubusercontent.com/44311497/208331703-be58e5f5-3350-4c29-8f85-26d889c68490.png)
 
 
 ## Poster
