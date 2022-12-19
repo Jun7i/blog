@@ -7,7 +7,6 @@ categories:
  - Website
 ---
 
-## Information management system project
 ## Back end
 ![image](https://user-images.githubusercontent.com/44311497/208363097-9e628523-5d58-4d47-8fcc-cada5a59473f.png)
 
