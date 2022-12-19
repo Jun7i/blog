@@ -1,5 +1,5 @@
 ---
-title: Information management website project
+title: Information management system
 date: 2022-12-16
 tags:
  - Information management
@@ -7,4 +7,4 @@ categories:
  - Website
 ---
 
-## Information management website project
+## Information management system project
