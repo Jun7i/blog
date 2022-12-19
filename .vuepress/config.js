@@ -11,13 +11,13 @@ module.exports = {
     nav: [
       { text: 'Home', link: '/', icon: 'reco-home' },
       { text: 'TimeLine', link: '/timeline/', icon: 'reco-date' },
-      { text: 'About Me', link: '/docs/aboutme/'},
+      { text: 'About Me', link: '/docs/aboutme/', icon: 'reco-account' },
       { text: 'Contact', 
         icon: 'reco-message',
         items: [
-          { text: 'GitHub', link: 'https://github.com/Jun7i'},
+          { icon: 'reco-github', link: 'https://github.com/Jun7i'},
           { text: 'CodePen', link: 'https://codepen.io/Jun_7i'},
-          { text: 'LinkedIn', link: 'https://www.linkedin.com/in/zejun-li-70ab731b4/' }
+          { icon: 'reco-linkedin', link: 'https://www.linkedin.com/in/zejun-li-70ab731b4/' }
         ]
       }
     ],
