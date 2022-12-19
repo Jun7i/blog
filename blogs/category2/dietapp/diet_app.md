@@ -9,8 +9,9 @@ categories:
 
 ## ISTA498 Senior Capstone project
 
+
 ## Proposal
-![](https://raw.githubusercontent.com/Jun7i/blog-reco-theme/main/blogs/category2/dietapp/Proposal.pdf)
+![](https://raw.githubusercontent.com/Jun7i/blog/707b4c112000400479d6c1bc2f8f1e5236abea50/blogs/category2/dietapp/Proposal.pdf)
 
 ## Poster
 ![](https://raw.githubusercontent.com/Jun7i/blog-reco-theme/main/blogs/category2/dietapp/Capstone_Poster.png)
