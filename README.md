@@ -1,7 +1,7 @@
 ---
 home: true
 bgImage: '/bg.png'
-heroText: Zejun Li
+heroText: 
 tagline: portfolio
 # heroImage: /hero.png
 # heroImageStyle: {
@@ -13,7 +13,7 @@ tagline: portfolio
 #   borderRadius: '1rem',
 # }
 bgImageStyle: {
-  height: '450px'
+  height: '550px'
 }
 isShowTitleInHome: false
 actionText: Guide
