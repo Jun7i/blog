@@ -21,6 +21,11 @@ module.exports = {
         ]
       }
     ],
+    home: true,
+    bgImage: '/bg.png',
+    bgImageStyle: {
+    height: '350px'
+    },
     noFoundPageByTencent: false,
     type: 'blog',
     // 博客设置
