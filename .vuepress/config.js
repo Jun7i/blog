@@ -20,7 +20,8 @@ module.exports = {
           { text: 'LinkedIn', link: 'https://www.linkedin.com/in/zejun-li-70ab731b4/' }
         ]
       }
-    ],  
+    ],
+    noFoundPageByTencent: false,
     type: 'blog',
     // 博客设置
     blogConfig: {
