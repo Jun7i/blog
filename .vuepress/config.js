@@ -21,6 +21,8 @@ module.exports = {
         ]
       }
     ],
+    home: true,
+    heroImage: '/hero.png',
     noFoundPageByTencent: false,
     type: 'blog',
     // 博客设置
