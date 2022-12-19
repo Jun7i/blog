@@ -13,7 +13,7 @@ tagline: portfolio
 #   borderRadius: '1rem',
 # }
 bgImageStyle: {
-  height: '550px'
+  height: '450px'
 }
 isShowTitleInHome: false
 actionText: Guide
