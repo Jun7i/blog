@@ -11,7 +11,16 @@ categories:
 
 
 ## Proposal
-![image](https://user-images.githubusercontent.com/44311497/208331703-be58e5f5-3350-4c29-8f85-26d889c68490.png)
+![image](https://user-images.githubusercontent.com/44311497/208331990-f8fc5850-c740-4233-90be-519bc7282ec5.png)
+![image](https://user-images.githubusercontent.com/44311497/208332002-f9583913-03db-4d0d-9c72-72ae7c9480a4.png)
+![image](https://user-images.githubusercontent.com/44311497/208332020-0099b9bf-2a16-4cc0-8344-1523879d868f.png)
+![image](https://user-images.githubusercontent.com/44311497/208332030-6c7ea26e-3cf5-44ee-adba-9d91219d5dd7.png)
+![image](https://user-images.githubusercontent.com/44311497/208332040-1a08a028-d078-422d-be56-4d6edc55100b.png)
+![image](https://user-images.githubusercontent.com/44311497/208332050-7bef24d0-73c2-4e49-9ab5-b1bd90da9870.png)
+![image](https://user-images.githubusercontent.com/44311497/208332066-96cd831e-b745-45c7-8b0e-b3cb1a0d5eb3.png)
+![image](https://user-images.githubusercontent.com/44311497/208332078-0e6d44fd-f827-43fc-8b65-2133cff829c7.png)
+![image](https://user-images.githubusercontent.com/44311497/208332083-a1b1441c-9eaf-436c-b217-75bc7c8245d4.png)
+![image](https://user-images.githubusercontent.com/44311497/208332097-239c5d5e-4f54-4032-a75c-dea9bd7618e0.png)
 
 
 ## Poster
