@@ -3,6 +3,7 @@ title: Cancer Data Analysis project
 date: 2022-04-28
 tags:
  - Cancer
+ - Python
 categories: 
  - Data Analysis
 ---
