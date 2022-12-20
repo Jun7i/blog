@@ -3,6 +3,12 @@ title: Information management system
 date: 2022-12-16
 tags:
  - Information management
+ - SQL
+ - HTML/CSS/JS
+ - Vue
+ - Springboot
+ - MyBatis
+ - Java
 categories: 
  - Website
 ---
