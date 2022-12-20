@@ -3,6 +3,7 @@ title: Covid Data Analysis project
 date: 2021-04-16
 tags:
  - Covid
+ - Python
 categories: 
  - Data Analysis
 ---
