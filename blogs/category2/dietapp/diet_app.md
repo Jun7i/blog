@@ -2,7 +2,9 @@
 title: Diet app project
 date: 2022-09-01
 tags:
- - diet app
+ - Diet app
+ - PHP
+ - HTML/CSS/JS
 categories: 
  - Website
 ---
