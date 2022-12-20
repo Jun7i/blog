@@ -3,6 +3,7 @@ title: College Ranking project
 date: 2022-05-16
 tags:
  - college ranking
+ - Python
 categories: 
  - Data Analysis
 ---
