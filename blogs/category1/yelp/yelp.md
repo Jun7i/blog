@@ -2,7 +2,8 @@
 title: Yelp Data Analysis project
 date: 2022-05-16
 tags:
- - Yelp, Python
+ - Yelp
+ - Python
 categories: 
  - Data Analysis
 ---
