@@ -2,7 +2,9 @@
 title: Diet app project database jupyter notebook
 date: 2022-09-01
 tags:
- - diet app
+ - Diet app
+ - Python
+ - SQL
 categories: 
  - Website
 ---
