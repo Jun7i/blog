@@ -1,5 +1,6 @@
 ---
 home: true
+bgImage: '/bg.png'
 heroText: Zejun Li
 tagline: portfolio
 # heroImage: /hero.png
